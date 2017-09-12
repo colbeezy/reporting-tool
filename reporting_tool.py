@@ -3,6 +3,7 @@
 
 import psycopg2
 
+
 def top_articles():
     """
     Returns the 3 most-viewed articles of all time
@@ -21,6 +22,7 @@ def top_articles():
     return results
     database.close()
 
+
 def top_authors():
     """
     Returns authors sorted by # of page views
@@ -37,6 +39,7 @@ def top_authors():
         print "%s - %d views" % (i[0], i[1])
     return results
     database.close()
+
 
 def errorful_days():
     """
@@ -57,6 +60,7 @@ def errorful_days():
         print "%s - %s%% errors" % (i[0], i[1])
     return results
     database.close()
+
 
 print "\nTop 3 articles of all time: "
 top_articles()
