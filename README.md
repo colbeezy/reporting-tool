@@ -59,10 +59,10 @@ CREATE VIEW views_by_author as
 ### View 5: Dates with page views and errors
 ```
 CREATE VIEW status_by_date as
-    SELECT time::timestamp::date AS date, 
-        COUNT (*) as requests,
-        COUNT(CASE WHEN status = '200 OK' then 1 end) as views,
-        COUNT(CASE WHEN status != '200 OK' then 1 end) as errors
+    select time::timestamp::date AS date, 
+        count (*) as requests,
+        count(case when status = '200 OK' then 1 end) as views,
+        count(case when status != '200 OK' then 1 end) as errors
     from log
     group by date;
 ```
